@@ -1,0 +1,112 @@
+{ 
+  "06/14/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/15/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/16/2018": {
+    "billedTime": "10", 
+    "billedAmount": "100", 
+    "unbilledTime": "20", 
+    "unbilledAmount": "200"
+  },
+  "06/17/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/18/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/19/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/20/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/21/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  },
+  "06/22/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/23/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/24/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/25/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/26/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/27/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/28/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/29/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+  ,
+  "06/30/2018": {
+    "billedTime": "500", 
+    "billedAmount": "1000", 
+    "unbilledTime": "200", 
+    "unbilledAmount": "400"
+  }
+}

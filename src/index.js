@@ -1,14 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Widget from './components/Widget';
+import data from './mocks/data.json';
+import widgetTypes from './configs/widgetTypes';
+import styles from './index.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+  render () {
     return (
-      <div>Hello</div>
+      <div className={ styles['widgets-container'] }>
+        {Object.keys(widgetTypes).map((type) => {
+          return <Widget
+            key={ type }
+            data={ data }
+            type={ type } />;
+        })}
+      </div>
     );
   }
 }
