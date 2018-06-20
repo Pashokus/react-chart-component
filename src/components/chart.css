@@ -1,3 +1,7 @@
 .bar-chart {
   background-color: #ffffff;
 }
+
+.bar {
+    opacity: 0.25;
+}
