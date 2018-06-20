@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, CartesianGrid, Tooltip } from 'recharts';
+import { BarChart, Bar, CartesianGrid, Tooltip, XAxis } from 'recharts';
 import CustomTooltip from './Tooltip';
-import debounce from 'debounce';
+import moment from 'moment';
 import styles from './chart.css';
 
 export default class HugeChart extends PureComponent {
@@ -21,12 +21,14 @@ export default class HugeChart extends PureComponent {
     this.updateMousePosition = this.updateMousePosition.bind(this);
   }
   render () {
-    const { data, width, barSize } = this.props;
+    const { data, config } = this.props;
+    const { barSize, gapBetweenBars, interval, headerWidth, fontSize } = config;
     const { hoveredCharts, mousePosition, showTooltip } = this.state;
+    const width = data.length * (barSize + gapBetweenBars);
 
     return (
       <BarChart
-        onMouseMove={ debounce(this.updateMousePosition, 70) }
+        onMouseMove={ this.updateMousePosition }
         width={ width }
         height={ 200 }
         data={ data }
@@ -42,6 +44,16 @@ export default class HugeChart extends PureComponent {
           content={ <CustomTooltip hoveredCharts={ hoveredCharts } /> }
           position={ { x: mousePosition.x, y: mousePosition.y } } />
         <CartesianGrid vertical={ false } stroke="#eeeeee" />
+        <XAxis
+          axisLine={ false }
+          tickLine={ false }
+          stroke="#898989"
+          tick={ { fontSize } }
+          interval={ interval }
+          dataKey="name"
+          orientation="top"
+          width={ headerWidth }
+          tickFormatter={ this.headerFormatter } />
         <Bar
           dataKey="unbilledTime"
           stackId="a"
@@ -63,11 +75,15 @@ export default class HugeChart extends PureComponent {
 
     this.setState({
       mousePosition: {
-        x: activeCoordinate.x,
-        y: activeCoordinate.y
+        x: activeCoordinate && activeCoordinate.x,
+        y: activeCoordinate && activeCoordinate.y
       },
       showTooltip: true
     });
+  }
+
+  headerFormatter (date) {
+    return moment(date, 'MM-DD-YYYY').format('MMM, DD');
   }
 
   setActiveBar (target, index, event) {
