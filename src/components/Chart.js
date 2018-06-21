@@ -9,26 +9,19 @@ export default class HugeChart extends PureComponent {
     super(props);
 
     this.state = {
-      hoveredCharts: null,
-      mousePosition: {
-        x: 0,
-        y: 0
-      },
-      showTooltip: false
+      hoveredCharts: null
     };
 
     this.setActiveBar = this.setActiveBar.bind(this);
-    this.updateMousePosition = this.updateMousePosition.bind(this);
   }
   render () {
     const { data, config } = this.props;
     const { barSize, gapBetweenBars, interval, headerWidth, fontSize } = config;
-    const { hoveredCharts, mousePosition, showTooltip } = this.state;
+    const { hoveredCharts } = this.state;
     const width = data.length * (barSize + gapBetweenBars);
 
     return (
       <BarChart
-        onMouseMove={ this.updateMousePosition }
         width={ width }
         height={ 200 }
         data={ data }
@@ -44,17 +37,7 @@ export default class HugeChart extends PureComponent {
         </defs>
         <Tooltip
           cursor={ false }
-          wrapperStyle={ {
-            visibility: showTooltip ? 'visible' : 'hidden',
-            opacity: showTooltip ? '1' : '0',
-            transition: showTooltip ? 'opacity 0.5s linear' : '',
-            zIndex: 5
-          } }
-          isAnimationActive={ true }
-          animationDuration={ 5000 }
-          animationEasing={ 'ease-in' }
-          content={ <CustomTooltip hoveredCharts={ hoveredCharts } /> }
-          position={ { x: mousePosition.x, y: mousePosition.y } } />
+          content={ <CustomTooltip hoveredCharts={ hoveredCharts } /> } />
         <CartesianGrid fill="#ffffff" vertical={ false } stroke="#eeeeee" />
         <XAxis
           axisLine={ false }
@@ -87,18 +70,6 @@ export default class HugeChart extends PureComponent {
     return moment(date, 'MM-DD-YYYY').format('MMM, DD');
   }
 
-  updateMousePosition (event) {
-    const { activeCoordinate } = event;
-
-    this.setState({
-      mousePosition: {
-        x: activeCoordinate && activeCoordinate.x,
-        y: activeCoordinate && activeCoordinate.y
-      },
-      showTooltip: true
-    });
-  }
-
   setActiveBar (target, index, event) {
     const { type } = event;
 
@@ -108,12 +79,7 @@ export default class HugeChart extends PureComponent {
       });
     } else {
       this.setState({
-        hoveredCharts: null,
-        mousePosition: {
-          x: 0,
-          y: 0
-        },
-        showTooltip: false
+        hoveredCharts: null
       });
     }
   }
