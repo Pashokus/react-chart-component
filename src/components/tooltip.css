@@ -22,7 +22,7 @@
   flex-direction: row;
 }
 
-.values-container > span, 
+.values-container > span,
 .labels-container > span {
   padding-bottom: 16px;
   font-size: 14px;
@@ -31,7 +31,7 @@
   font-stretch: normal;
   line-height: 1.57;
   letter-spacing: normal;
-  color: #333333;  
+  color: #333333;
 }
 
 .label {

@@ -46,6 +46,8 @@ export default class HugeChart extends PureComponent {
           cursor={ false }
           wrapperStyle={ {
             visibility: showTooltip ? 'visible' : 'hidden',
+            opacity: showTooltip ? '1' : '0',
+            transition: showTooltip ? 'opacity 0.5s linear' : '',
             zIndex: 5
           } }
           isAnimationActive={ true }
