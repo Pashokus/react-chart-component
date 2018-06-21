@@ -4,9 +4,9 @@ import styles from './tooltip.css';
 
 export default class Tooltip extends PureComponent {
   render () {
-    const { hoveredCharts, active } = this.props;
+    const { hoveredCharts } = this.props;
 
-    if (active && hoveredCharts) {
+    if (hoveredCharts) {
       const { name, billedTime, billedAmount, unbilledTime, unbilledAmount } = hoveredCharts;
 
       const date = moment(name, 'MM-DD-YYYY');
