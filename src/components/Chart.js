@@ -26,8 +26,7 @@ export default class HugeChart extends PureComponent {
         height={ 200 }
         data={ data }
         barSize={ barSize }
-        className={ styles['bar-chart'] }
-        margin={ { top: 0, right: 0, bottom: 0, left: 0 } }>
+        margin={ { top: 0, right: 6, bottom: 0, left: 6 } }>
         <defs>
           <linearGradient
             gradientTransform="rotate(90)"
@@ -39,7 +38,7 @@ export default class HugeChart extends PureComponent {
         <Tooltip
           cursor={ false }
           content={ <CustomTooltip hoveredCharts={ hoveredCharts } /> } />
-        <CartesianGrid vertical={ false } stroke="#eeeeee" />
+        <CartesianGrid fill="#ffffff" vertical={ false } stroke="#eeeeee" />
         <XAxis
           axisLine={ false }
           tickLine={ false }
