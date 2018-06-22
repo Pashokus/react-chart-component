@@ -5,19 +5,9 @@ import moment from 'moment';
 import styles from './chart.css';
 
 export default class HugeChart extends PureComponent {
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      hoveredCharts: null
-    };
-
-    this.setActiveBar = this.setActiveBar.bind(this);
-  }
   render () {
     const { data, config } = this.props;
     const { barSize, gapBetweenBars, interval, headerWidth, fontSize } = config;
-    const { hoveredCharts } = this.state;
     const width = data.length * (barSize + gapBetweenBars);
 
     return (
@@ -37,7 +27,7 @@ export default class HugeChart extends PureComponent {
         </defs>
         <Tooltip
           cursor={ false }
-          content={ <CustomTooltip hoveredCharts={ hoveredCharts } /> } />
+          content={ <CustomTooltip /> } />
         <CartesianGrid fill="#ffffff" vertical={ false } stroke="#eeeeee" />
         <XAxis
           axisLine={ false }
@@ -53,34 +43,16 @@ export default class HugeChart extends PureComponent {
           dataKey="unbilledTime"
           stackId="a"
           fill="url(#unbilled)"
-          className={ styles['bar'] }
-          onMouseEnter={ this.setActiveBar }
-          onMouseLeave={ this.setActiveBar } />
+          className={ styles['bar'] } />
         <Bar
           dataKey="billedTime"
           stackId="a"
-          fill="#82c783"
-          onMouseEnter={ this.setActiveBar }
-          onMouseLeave={ this.setActiveBar } />
+          fill="#82c783" />
       </BarChart>
     );
   }
 
   headerFormatter (date) {
     return moment(date, 'MM-DD-YYYY').format('MMM, DD');
-  }
-
-  setActiveBar (target, index, event) {
-    const { type } = event;
-
-    if (type === 'mouseenter') {
-      this.setState({
-        hoveredCharts: target
-      });
-    } else {
-      this.setState({
-        hoveredCharts: null
-      });
-    }
   }
 }

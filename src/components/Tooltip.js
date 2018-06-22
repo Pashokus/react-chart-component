@@ -4,10 +4,11 @@ import styles from './tooltip.css';
 
 export default class Tooltip extends PureComponent {
   render () {
-    const { hoveredCharts, active } = this.props;
+    const { active } = this.props;
 
-    if (hoveredCharts && active) {
-      const { name, billedTime, billedAmount, unbilledTime, unbilledAmount } = hoveredCharts;
+    if (active) {
+      const { payload } = this.props;
+      const { name, billedTime, billedAmount, unbilledTime, unbilledAmount } = payload[0].payload;
 
       const date = moment(name, 'MM-DD-YYYY');
       const unbilledTimeFormatted = this._getFormattedTime(unbilledTime);
