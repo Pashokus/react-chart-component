@@ -2,10 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import styles from './tooltip.css';
 import { timeParser } from '../../helpers/dateTimeFormatter';
-
-const getFormattedAmount = (amount) => {
-  return `$${amount.toLocaleString('en')}`;
-};
+import { getFormattedAmount } from '../../helpers/amountFormatter';
 
 export default (props) => {
   const { active } = props;
