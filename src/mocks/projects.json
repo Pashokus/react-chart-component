@@ -1,0 +1,38 @@
+[
+  {
+    "date": "May 23, 2018",
+    "time": "100",
+    "project": {
+        "name": "Project1"
+    },
+    "amount": "100",
+    "status": "sent"  
+  },
+  {
+    "date": "May 23, 2018",
+    "time": "1000",
+    "project": {
+        "name": "Project2"
+    },
+    "amount": "1000",
+    "status": "unbilled"
+  },
+  {
+    "date": "May 23, 2018",
+    "time": "10000",
+    "project": {
+        "name": "Project3"
+    },
+    "amount": 10000,
+    "status": "paid"
+  },
+  {
+    "date": "May 23, 2018",
+    "time": "100000",
+    "project": {
+        "name": "Project4Project4Project4Project4Project4Project4Project4Project4Project4Project4Project4Project4Project4"
+    },
+    "amount": 100000,
+    "status": "attached"
+  }
+]

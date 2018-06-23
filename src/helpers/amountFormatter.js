@@ -1,3 +1,4 @@
 export const getFormattedAmount = (amount) => {
-  return `$${amount.toLocaleString('en')}`;
+  const parsedNumber = parseInt(amount, 10);
+  return `$${parsedNumber.toLocaleString('en')}`;
 };
