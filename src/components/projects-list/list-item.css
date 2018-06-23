@@ -11,7 +11,6 @@
   justify-content: space-between;
 }
 
-
 .list-item-section {
   margin: 16px 0;
   display: flex;
@@ -30,6 +29,8 @@
   font-weight: 600;
   line-height: 1.29;
   color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .right-container, .left-container {

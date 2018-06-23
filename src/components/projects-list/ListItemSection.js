@@ -6,7 +6,9 @@ export default (props) => {
   const element = render || <span>{ typeof value === 'object' ? value.name : value }</span>;
 
   return (
-    <div className={ styles['list-item-section'] }>
+    <div
+      className={ styles['list-item-section'] }
+      style={ { maxWidth: label === 'project' ? '400px' : 'auto' } }>
       <span>{ label }</span>
       {element}
     </div>
