@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import widgetTypes from '../configs/widgetTypes';
-import widgetSizes from '../configs/widgetSizes';
+import widgetTypes from '../../configs/widgetTypes';
+import widgetSizes from '../../configs/widgetSizes';
 import Chart from './Chart';
 import styles from './widget.css';
 

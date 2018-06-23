@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Widget from './components/Widget';
+import Widget from './components/chart/Widget';
 import data from './mocks/data.json';
 import widgetTypes from './configs/widgetTypes';
 import styles from './index.css';
