@@ -4,7 +4,7 @@ import CustomTooltip from './Tooltip';
 import moment from 'moment';
 import styles from './chart.css';
 
-export default class HugeChart extends PureComponent {
+export default class Chart extends PureComponent {
   render () {
     const { data, config } = this.props;
     const { barSize, gapBetweenBars, interval, headerWidth, fontSize } = config;

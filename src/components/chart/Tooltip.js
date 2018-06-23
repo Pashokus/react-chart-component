@@ -1,52 +1,47 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import moment from 'moment';
 import styles from './tooltip.css';
+import { timeParser } from '../../helpers/dateTimeFormatter';
 
-export default class Tooltip extends PureComponent {
-  render () {
-    const { active } = this.props;
+const getFormattedAmount = (amount) => {
+  return `$${amount.toLocaleString('en')}`;
+};
 
-    if (active) {
-      const { payload } = this.props;
-      const { name, billedTime, billedAmount, unbilledTime, unbilledAmount } = payload[0].payload;
+export default (props) => {
+  const { active } = props;
 
-      const date = moment(name, 'MM-DD-YYYY');
-      const unbilledTimeFormatted = this._getFormattedTime(unbilledTime);
-      const billedTimeFormatted = this._getFormattedTime(billedTime);
-      const billedAmountFormatted = this._getFormattedAmount(billedAmount);
-      const unbilledAmountFormatted = this._getFormattedAmount(unbilledAmount);
+  if (active) {
+    const { payload } = props;
+    const { name, billedTime, billedAmount, unbilledTime, unbilledAmount } = payload[0].payload;
 
-      const label = date.format('ddd, MMM DD');
+    const date = moment(name, 'MM-DD-YYYY');
+    const unbilledTimeFormatted = timeParser(unbilledTime);
+    const billedTimeFormatted = timeParser(billedTime);
+    const billedAmountFormatted = getFormattedAmount(billedAmount);
+    const unbilledAmountFormatted = getFormattedAmount(unbilledAmount);
 
-      return (
-        <div className={ styles['custom-tooltip'] }>
-          <p className={ styles['label'] }>{`${label}`}</p>
-          <div className={ styles['data-conatiner'] }>
-            <div className={ styles['labels-container'] }>
-              <span>Billed</span>
-              <span>Unbilled</span>
-              <span>Billed Amount</span>
-              <span>Unbilled Amount</span>
-            </div>
-            <div className={ styles['values-container'] }>
-              <span>{billedTimeFormatted}</span>
-              <span>{unbilledTimeFormatted}</span>
-              <span>{billedAmountFormatted}</span>
-              <span>{unbilledAmountFormatted}</span>
-            </div>
+    const label = date.format('ddd, MMM DD');
+
+    return (
+      <div className={ styles['custom-tooltip'] }>
+        <p className={ styles['label'] }>{`${label}`}</p>
+        <div className={ styles['data-conatiner'] }>
+          <div className={ styles['labels-container'] }>
+            <span>Billed</span>
+            <span>Unbilled</span>
+            <span>Billed Amount</span>
+            <span>Unbilled Amount</span>
+          </div>
+          <div className={ styles['values-container'] }>
+            <span>{billedTimeFormatted}</span>
+            <span>{unbilledTimeFormatted}</span>
+            <span>{billedAmountFormatted}</span>
+            <span>{unbilledAmountFormatted}</span>
           </div>
         </div>
-      );
-    }
-
-    return null;
+      </div>
+    );
   }
 
-  _getFormattedTime (time) {
-    return moment().startOf('day').seconds(time).format('H:mm:ss');
-  }
-
-  _getFormattedAmount (amount) {
-    return `$${amount.toLocaleString('en')}`;
-  }
+  return null;
 };
