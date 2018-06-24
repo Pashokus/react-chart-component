@@ -8,7 +8,7 @@ export default (props) => {
   return (
     <div
       className={ styles['list-item-section'] }
-      style={ { maxWidth: label === 'project' ? '400px' : 'auto' } }>
+      style={ { maxWidth: label === 'project' ? '300px' : 'auto' } }>
       <span>{ label }</span>
       {element}
     </div>

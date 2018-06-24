@@ -37,6 +37,10 @@
   display: flex;
 }
 
+.left-continer {
+  overflow: hidden;
+}
+
 .right-container > .list-item-section {
   min-width: 90px;
 }
