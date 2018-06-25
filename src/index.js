@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import ProjectsList from './components/projects-list/List';
-import Widget from './components/chart/Widget';
+import ProjectsList from './components/projects-list/';
+import Widget from './components/chart/';
 import data from './mocks/data.json';
 import projectsData from './mocks/projects.json';
 import widgetTypes from './configs/widgetTypes';

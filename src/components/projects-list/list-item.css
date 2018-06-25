@@ -1,27 +1,33 @@
 .projects-list-item {
   margin: 10px;
   height: 80px;
+  display: flex;
+  min-width: 780px;
   border-radius: 2px;
   border: solid 1px #dddddd;
-  max-width: 1104px;
-}
-
-.projects-list-item-container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .list-item-section {
-  margin: 16px 0;
+  margin: 16px 16px 16px 0;
   display: flex;
   flex-direction: column;
+  min-width: 128px;
+  max-width: 128px;
 }
 
 .list-item-section > span:first-child {
   margin-bottom: 8px;
-  text-transform: capitalize;
   font-size: 12px;
   color: #898989;
+}
+
+.project {
+  max-width: none;
+  width: 100%;
+}
+
+.date {
+  margin-left: 16px;
 }
 
 .list-item-section > span:last-child {
@@ -31,32 +37,13 @@
   color: #333;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.right-container, .left-container {
-  display: flex;
-}
-
-.left-continer {
-  overflow: hidden;
-}
-
-.right-container > .list-item-section {
-  min-width: 90px;
-}
-
-.right-container > .list-item-section {
-  margin-right: 16px;
-}
-
-.left-container > .list-item-section {
-  min-width: 128px;
-  margin-left: 16px;
+  white-space: nowrap;
 }
 
 .list-item-section > span.project-status {
   text-transform: capitalize;     
   font-size: 12px;
+  width: 90px;
   line-height: 20px;
   text-align: center;
   color: #ffffff;
@@ -67,6 +54,8 @@
   width: 24px;
   height: 24px;
   -webkit-mask-image: url('./more-button.svg');
-  background-color: #333333;
-  margin: 28px 16px 0 0px;
+  background-color: #333;
+  margin: 28px 16px 0px 0px;
+  min-width: 24px;
+  -webkit-mask-repeat: no-repeat;
 }
